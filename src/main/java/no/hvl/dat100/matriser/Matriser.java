@@ -6,16 +6,13 @@ public class Matriser {
 
 	// a)
 	public static void skrivUt(int[][] matrise) {
-		System.out.print("[");
+		System.out.print("[[");
 		boolean første_verdi = true;
 		boolean første_rad = true;
 		int rad_nummer = 0;
 		for (int[] rad: matrise) {
 			rad_nummer += 1;
-			if (første_rad) {
-				System.out.print("[");
-				første_rad = false;
-			} else {
+			if (rad_nummer != 1) {
 				System.out.print(" [");
 			}
 			for (int verdi: rad) {
