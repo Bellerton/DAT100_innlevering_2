@@ -4,59 +4,50 @@ public class Tabeller {
 
 	// a)
 	public static void skrivUt(int[] tabell) {
-		System.out.print ("[");
-		for (int i = 0; i < tabell.length - 1; i++) {
-			System.out.print(tabell[i]);
-			System.out.print(", ");
-		}
-		if (tabell.length > 0) {
-			System.out.print(tabell[tabell.length - 1]);
-		}
-		System.out.print("]");
-		// TODO
-		//throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
 
+		for (int i = 0; i < tabell.length; i++) {
+			System.out.print(tabell[i] + ", ");
+		}
+		System.out.println();
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
-		String string_to_return = "[";
-		for (int i = 0; i < tabell.length - 1; i++){
-			string_to_return = string_to_return.concat(tabell[i] + ",");
+
+		String tekst = "[";
+		int i = 0;
+
+		for (i = 0; i < tabell.length; i++) {
+			tekst = tekst + tabell[i];
+			if (i < tabell.length - 1) {
+				tekst = tekst + ",";
+			}
 		}
-		if (tabell.length > 0) {
-			string_to_return = string_to_return.concat(tabell[tabell.length-1] + "");
-		}
-		string_to_return = string_to_return.concat("]");
-		return string_to_return;
-			// TODO
-		//throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
+		tekst = tekst + "]";
+		return tekst;
 	}
 
 	// c)
 	public static int summer(int[] tabell) {
 		int sum = 0;
-		for (int verdi: tabell) {
-			sum += verdi;
+
+		for (int i = 0; i < tabell.length; i++) {
+			sum += tabell[i];
 		}
 		return sum;
-		// TODO
-		//throw new UnsupportedOperationException("Metoden summer ikke implementert");
 	}
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
-		boolean tallet_finnes = false;
-		for (int verdi: tabell) {
-			if (verdi == tall) {
-				tallet_finnes = true;
-				return tallet_finnes;
+
+		boolean finnes = false;
+
+		for (int i = 0; i < tabell.length; i++) {
+			if (tabell[i] == tall) {
+				finnes = true;
 			}
 		}
-		return tallet_finnes;
-		// TODO
-		//throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
-
+		return finnes;
 	}
 
 	// e)
