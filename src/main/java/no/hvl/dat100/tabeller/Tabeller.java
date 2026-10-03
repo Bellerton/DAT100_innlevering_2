@@ -50,64 +50,63 @@ public class Tabeller {
 		return finnes;
 	}
 
-	// e)
+
+	//e
 	public static int posisjonTall(int[] tabell, int tall) {
-		int posisijon = -1;
+
 		for (int i = 0; i < tabell.length; i++) {
 			if (tabell[i] == tall) {
-				posisijon = i;
-				return posisijon;
+				return i;
 			}
+
 		}
-		return posisijon;
+		return -1;
+	}
+
 		// TODO
 		//throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
-	}
 
-	// f)
+	//f
 	public static int[] reverser(int[] tabell) {
 
-		int tabell_lengde = tabell.length;
-		int [] tabell_for_retur = new int[tabell_lengde];
-		for (int i = 0; i < tabell_lengde; i++) {
-			tabell_for_retur[tabell_lengde - i - 1] = tabell[i];
+		int[] reverser = new int[tabell.length];
+
+		for (int i = 0; i < tabell.length; i++) {
+		reverser[i] = tabell[tabell.length - i - 1];
 		}
-		return tabell_for_retur;
+		return reverser;
+	}
 		// TODO
 		//throw new UnsupportedOperationException("Metoden reverser ikke implementert");
-	}
 
-	// g)
+	//g
 	public static boolean erSortert(int[] tabell) {
 
-		boolean sortert = true;
-		int tabell_lengde = tabell.length;
-		for (int i = 0; i < tabell_lengde - 1; i++) {
-			if (tabell[i] > tabell[i + 1]) {
-				sortert = false;
-				return sortert;
+		for (int i = 1; i < tabell.length; i++) {
+
+			if (tabell[i] < tabell[i - 1]) {
+			return false;
 			}
 		}
-		return sortert;
+		return true;
+	}
 
 		// TODO
 		//throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
-	}
 
-	// h)
+	//h
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
-		int tabell1_lengde = tabell1.length;
-		int tabell2_lengde = tabell2.length;
-		int [] tabell_for_retur = new int[tabell1_lengde + tabell2_lengde];
-		for (int i = 0; i < tabell1_lengde; i++) {
-			tabell_for_retur[i] = tabell1[i];
-		}
-		for (int i = 0; i < tabell2_lengde; i++) {
-			tabell_for_retur[i + tabell1_lengde] = tabell2[i];
-		}
-		return tabell_for_retur;
-		// TODO
-		//throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
 
+		int[] resultat = new int[tabell1.length + tabell2.length];
+
+		for (int i = 0; i < tabell1.length; i++) {
+		resultat[i] = tabell1[i];
+		}
+
+		for (int i = 0; i < tabell2.length; i++) {
+		resultat[tabell1.length + i] = tabell2[i];
+		}
+
+		return resultat;
 	}
 }
